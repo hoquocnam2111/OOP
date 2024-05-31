@@ -4,46 +4,50 @@ class SinhVien{
 	private:
 		string id,ten,ns;
 		float gpa;
+		static int dem ;
+
 	public:
-		SinhVien();
-		void nhap();
- 		void in();
- 		float getGpa();
-		
+		// SinhVien();
+		// void nhap();
+ 		// void in();
+ 		// float getGpa();
+		void tangdem();
+		int getdem();
 };
-SinhVien::SinhVien(){
-	id=ten=ns="";
-	gpa=0;
+int SinhVien::dem=0;
+
+void SinhVien::tangdem(){
+	dem++;
 }
-void SinhVien::nhap(){
-	cout<<"Nhap ID : ";cin>>id;
-	cin.ignore();
-	cout<<"Nhap Ten : ";getline(cin,ten);
-	cout<<"Nhap Ns: ";cin>>ns;
-	cout<<"Nhap Diem: ";cin>>gpa;
+int SinhVien::getdem(){
+	return dem;
 }
-void SinhVien::in(){
-	cout<<id<<" "<<ten<<" "<<ns<<" "<<gpa<<" "<<endl;
-}
-float SinhVien::getGpa(){
-	return this->gpa;
-}
-bool cmp(SinhVien a, SinhVien b){
-	return a.getGpa()>b.getGpa();
-}
+// SinhVien::SinhVien(){
+// 	id=ten=ns="";
+// 	gpa=0;
+// }
+// void SinhVien::nhap(){
+// 	cout<<"Nhap ID : ";cin>>id;
+// 	cin.ignore();
+// 	cout<<"Nhap Ten : ";getline(cin,ten);
+// 	cout<<"Nhap Ns: ";cin>>ns;
+// 	cout<<"Nhap Diem: ";cin>>gpa;
+// }
+// void SinhVien::in(){
+// 	cout<<id<<" "<<ten<<" "<<ns<<" "<<gpa<<" "<<endl;
+// }
+// float SinhVien::getGpa(){
+// 	return this->gpa;
+// }
+// bool cmp(SinhVien a, SinhVien b){
+// 	return a.getGpa()>b.getGpa();
+// }
 int main(){
 	 
-	int n;
-	cin>>n;
-	
-	SinhVien a[100];
-	for(int i=0;i<n;i++){
-		a[i].nhap();
-	}
-	sort(a,a+n,cmp);
-	for(int i=0;i<n;i++){
-		a[i].in();
-	}
-	 
+	SinhVien x;
+	x.tangdem();
+	x.tangdem();
+	SinhVien y;
+	cout<<y.getdem()<<endl;
 	return 0;
 }
